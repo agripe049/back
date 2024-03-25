@@ -4,7 +4,7 @@ const tasks = require('../models/taskModel');
 const listTasks = async (req, res) => {
     try {
         const task = await tasks.findAll();
-        res.send({...task})
+        res.send([...task])
     } catch (error) {
         res.status(500).send(error)
     }
